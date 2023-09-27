@@ -7,6 +7,7 @@ import pyjokes
 import webbrowser
 import wikipedia
 import datetime
+import random
 
 # escuchar micro y devolver audio como texto
 def voice_to_text():
@@ -143,7 +144,8 @@ def voice_assistant():
             speak_spa(f'{text} en inglés se dice: ')
             speak_eng(translate(text))
         elif "chiste" in text:
-            speak_spa(pyjokes.get_joke(language = "es"))
+            list_of_jokes = pyjokes.get_jokes(language="es", category="all")
+            speak_spa(list_of_jokes[random.randint(0, len(list_of_jokes)-1)])
         elif "reproduce" in text:
             text = text.replace("reproduce", "")
             pywhatkit.playonyt(text)
