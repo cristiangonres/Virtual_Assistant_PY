@@ -55,7 +55,7 @@ def censure(text):
                   "pollas", "coño", "coños", "cabrón", "mamón", "tomar por culo", "joder"]
     for p in palabrotas:
         if p in text:
-            text = text.replace(p, "¡Priscila no digas palabrotas!")
+            text = text.replace(p, "¡No se dicen palabrotas!")
     return text
             
             
